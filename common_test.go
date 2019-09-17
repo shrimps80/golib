@@ -29,3 +29,37 @@ func TestSubstr(t *testing.T) {
 	fmt.Println(Substr(str, 15, -1))
 	fmt.Println(Substr(str, -15, 15))
 }
+
+func TestInArray(t *testing.T) {
+	peopel := []string{"Bill", "Steve", "Mark", "David"}
+	if InArray("Mark", peopel) {
+		fmt.Println("in slice")
+	} else {
+		fmt.Println("not in slice")
+	}
+
+	var countryCapitalMap map[string]string
+	countryCapitalMap = make(map[string]string)
+
+	countryCapitalMap [ "France" ] = "巴黎"
+	countryCapitalMap [ "Italy" ] = "罗马"
+	countryCapitalMap [ "Japan" ] = "东京"
+	countryCapitalMap [ "India " ] = "新德里"
+
+	if InArray("罗马", countryCapitalMap) {
+		fmt.Println("in map")
+	} else {
+		fmt.Println("not in map")
+	}
+
+	var number = [5]int{1, 2, 3, 4}
+	if InArray(3, number) {
+		fmt.Println("in array")
+	} else {
+		fmt.Println("not in array")
+	}
+}
+
+func TestStrpos(t *testing.T) {
+	fmt.Println(Strpos("You love php, I love php too!", "p1hp", 10))
+}

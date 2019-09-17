@@ -5,6 +5,7 @@ import (
 	"strings"
 	"math"
 	"regexp"
+	"reflect"
 )
 
 func Time() int64 {
@@ -92,4 +93,40 @@ func Strrev(str string) string {
 		runes[i], runes[j] = runes[j], runes[i]
 	}
 	return string(runes)
+}
+
+func InArray(needle interface{}, haystack interface{}) bool {
+	val := reflect.ValueOf(haystack)
+	switch val.Kind() {
+	case reflect.Slice, reflect.Array:
+		for i := 0; i < val.Len(); i++ {
+			if reflect.DeepEqual(needle, val.Index(i).Interface()) {
+				return true
+			}
+		}
+	case reflect.Map:
+		for _, k := range val.MapKeys() {
+			if reflect.DeepEqual(needle, val.MapIndex(k).Interface()) {
+				return true
+			}
+		}
+	}
+
+	return false
+}
+
+func Strpos(haystack, needle string, offset int) int {
+	length := len(haystack)
+	if length == 0 || offset > length || -offset > length {
+		return -1
+	}
+
+	if offset < 0 {
+		offset += length
+	}
+	pos := strings.Index(haystack[offset:], needle)
+	if pos == -1 {
+		return -1
+	}
+	return pos + offset
 }
