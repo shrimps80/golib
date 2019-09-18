@@ -86,3 +86,8 @@ func TestMd5Str(t *testing.T) {
 func TestSha1Str(t *testing.T) {
 	fmt.Println(Sha1Str("123456"))
 }
+
+func TestRound(t *testing.T) {
+	fmt.Println(Round(3.164, 1))
+	fmt.Println(TruncRound(3.164, 1))
+}

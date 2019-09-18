@@ -19,3 +19,5 @@ go get github.com/shrimps80/golib
 + 获取随机字符串 `GetRandomString(6)`
 + sha1加密 `Sha1Str("123456")`
 + md5加密 `Md5Str("123456")`
++ 四舍五入保留n位小数 `Round(3.164, 1)`
++ 四舍保留n位小数 `TruncRound(3.164, 1)`
