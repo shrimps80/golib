@@ -3,6 +3,9 @@ package golib
 import (
 	"math"
 	"strings"
+	"strconv"
+	"time"
+	"math/rand"
 )
 
 func Substr(str string, start int, length int) string {
@@ -60,4 +63,24 @@ func Strpos(haystack, needle string, offset int) int {
 		return -1
 	}
 	return pos + offset
+}
+
+func ParseInt(b string, defInt int) int {
+	id, err := strconv.Atoi(b)
+	if err != nil {
+		return defInt
+	} else {
+		return id
+	}
+}
+
+func GetRandomString(length int) string {
+	str := "0123456789abcdefghijklmnopqrstuvwxyz"
+	bytes := []byte(str)
+	result := []byte{}
+	r := rand.New(rand.NewSource(time.Now().UnixNano()))
+	for i := 0; i < length; i++ {
+		result = append(result, bytes[r.Intn(len(bytes))])
+	}
+	return string(result)
 }

@@ -15,3 +15,5 @@ go get github.com/shrimps80/golib
 + 查找字符串在另一字符串中第一次出现的位置 `Strpos("You love php, I love php too!", "p1hp", 10)`
 + 根据map值进行排序 `SortMapByValue(age, "DESC")`
 + 用于小程序解码 `AesCBCDecrypt(session_key, iv)`
++ 字符转数字 `ParseInt("10", 0)`
++ 获取随机字符串 `GetRandomString(6)`

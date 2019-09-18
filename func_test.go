@@ -69,3 +69,12 @@ func TestSortMapByValue(t *testing.T) {
 	res := SortMapByValue(age, "DESC")
 	fmt.Println(res)
 }
+
+func TestParseInt(t *testing.T) {
+	fmt.Println(ParseInt("10", 0))
+	fmt.Println(ParseInt("a", 0))
+}
+
+func TestGetRandomString(t *testing.T) {
+	fmt.Println(GetRandomString(6))
+}
