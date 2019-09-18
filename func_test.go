@@ -63,3 +63,9 @@ func TestInArray(t *testing.T) {
 func TestStrpos(t *testing.T) {
 	fmt.Println(Strpos("You love php, I love php too!", "p1hp", 10))
 }
+
+func TestSortMapByValue(t *testing.T) {
+	age := map[string]string{"Bill": "60", "Steve": "56", "Mark": "31"}
+	res := SortMapByValue(age, "DESC")
+	fmt.Println(res)
+}
