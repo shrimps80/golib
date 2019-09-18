@@ -78,3 +78,11 @@ func TestParseInt(t *testing.T) {
 func TestGetRandomString(t *testing.T) {
 	fmt.Println(GetRandomString(6))
 }
+
+func TestMd5Str(t *testing.T) {
+	fmt.Println(Md5Str("123456"))
+}
+
+func TestSha1Str(t *testing.T) {
+	fmt.Println(Sha1Str("123456"))
+}

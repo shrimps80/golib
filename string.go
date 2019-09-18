@@ -6,6 +6,10 @@ import (
 	"strconv"
 	"time"
 	"math/rand"
+	"fmt"
+	"crypto/md5"
+	"crypto/sha1"
+	"encoding/hex"
 )
 
 func Substr(str string, start int, length int) string {
@@ -83,4 +87,14 @@ func GetRandomString(length int) string {
 		result = append(result, bytes[r.Intn(len(bytes))])
 	}
 	return string(result)
+}
+
+func Md5Str(s string) string {
+	return fmt.Sprintf("%x", md5.Sum([]byte(s)))
+}
+
+func Sha1Str(s string) string {
+	str := sha1.New()
+	str.Write([]byte(s))
+	return hex.EncodeToString(str.Sum([]byte("")))
 }

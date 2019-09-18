@@ -17,3 +17,5 @@ go get github.com/shrimps80/golib
 + 用于小程序解码 `AesCBCDecrypt(session_key, iv)`
 + 字符转数字 `ParseInt("10", 0)`
 + 获取随机字符串 `GetRandomString(6)`
++ sha1加密 `Sha1Str("123456")`
++ md5加密 `Md5Str("123456")`
